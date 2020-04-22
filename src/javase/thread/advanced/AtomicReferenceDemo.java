@@ -18,17 +18,24 @@ class User{
         this.age = age;
         this.userName = userName;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
 
 public class AtomicReferenceDemo {
     public static void main(String[] args) {
-        User z3 = new User("z3", 22);
-        User l4 = new User("l4", 25);
+        User z3 = new User("张三", 22);
+        User l4 = new User("李四", 25);
         //封装成原子引用
-        AtomicReference<User> atomicReference =new AtomicReference<>();
+        AtomicReference<User> atomicReference = new AtomicReference<>();
         atomicReference.set(z3);
-        System.out.println(atomicReference.compareAndSet(z3, l4)+""+atomicReference.get().toString());
-        System.out.println(atomicReference.compareAndSet(z3, l4)+""+atomicReference.get().toString());
-
+        System.out.println(atomicReference.compareAndSet(z3, l4)+"："+atomicReference.get().toString());
+        System.out.println(atomicReference.compareAndSet(z3, l4)+"："+atomicReference.get().toString());
     }
 }

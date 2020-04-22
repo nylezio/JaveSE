@@ -5,7 +5,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @description:
  * ArrayBlockingQueue 基于数组的有界阻塞队列FIFO
  * LinkedBlockingQueue 基于链表的有界（默认Integer.MAX_VALUE）阻塞队列FIFO，吞吐量高于Array
@@ -26,11 +26,21 @@ public class BlockingQueueDemo {
         System.out.println(blockingQueue.offer("a", 2L, TimeUnit.SECONDS));
         System.out.println(blockingQueue.offer("a", 2L, TimeUnit.SECONDS));
         System.out.println(blockingQueue.offer("a", 2L, TimeUnit.SECONDS));
+        System.out.println(blockingQueue.take());
+        System.out.println(blockingQueue.offer("a", 2L, TimeUnit.SECONDS));
 
 //        System.out.println(blockingQueue.take());
 //        System.out.println(blockingQueue.take());
 //        System.out.println(blockingQueue.take());
-//        System.out.println(blockingQueue.take());
 
+
+        BlockingQueue<Integer> blockingQueue1 = new ArrayBlockingQueue<>(4);
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
+        System.out.println(blockingQueue1.offer(1,1,TimeUnit.SECONDS));
     }
 }

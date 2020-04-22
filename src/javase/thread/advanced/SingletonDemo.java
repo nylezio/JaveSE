@@ -27,7 +27,7 @@ public class SingletonDemo {
             //类对象加锁
             synchronized (SingletonDemo.class){
                 if (instance == null){
-                    instance= new SingletonDemo();
+                    instance = new SingletonDemo();
                 }
             }
         }
@@ -39,7 +39,10 @@ public class SingletonDemo {
         int threadNum = 10;
         // 并发多线程，情况变化
         for (int i = 0; i < threadNum; i++){
-            new Thread(SingletonDemo::getInstance,String.valueOf(i)).start();
+            new Thread(()->{
+                SingletonDemo instance = SingletonDemo.getInstance();
+                System.out.println(instance);
+            },String.valueOf(i)).start();
         }
     }
 }

@@ -32,6 +32,8 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 public class ContainerNotSafeDemo {
     public static void main(String[] args) {
+//        listNotSafe();
+//        setNotSafe();
         mapNotSafe();
         //java.util.ConcurrentModificationException
         //并发修改异常

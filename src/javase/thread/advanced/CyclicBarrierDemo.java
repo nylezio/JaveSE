@@ -4,7 +4,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @description: 集齐七颗召唤神龙
  * @date: 2020/03/26 19:49
  */
@@ -19,9 +19,7 @@ public class CyclicBarrierDemo {
                 System.out.println(Thread.currentThread().getName() + "收集到第" + tempInt + "龙珠");
                 try {
                     cyclicBarrier.await();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (BrokenBarrierException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
             }, String.valueOf(i)).start();

@@ -13,10 +13,9 @@ import java.util.concurrent.TimeUnit;
  * 循环等待条件
  * @date: 2020/03/28 20:00
  */
-
 class HoldLockThread implements Runnable{
-    private final String a;
-    private final String b;
+    private String a;
+    private String b;
 
     HoldLockThread(String a, String b) {
         this.a = a;
@@ -39,9 +38,6 @@ class HoldLockThread implements Runnable{
     }
 }
 
-/**
- * @author 76582
- */
 public class DeadLockDemo {
     public static void main(String[] args) {
         /*

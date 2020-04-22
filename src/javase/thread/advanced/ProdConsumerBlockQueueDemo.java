@@ -6,13 +6,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @description: 生产消费者模式阻塞队列
  * volatile/CAS/AtomicInteger/BlockQueue/线程交互/AtomicReference
  * @date: 2020/03/26 23:29
  */
 
-class MyResource {
+class Shop {
     /**
      * flag 默认开启，进行生产+消费
      */
@@ -20,51 +20,51 @@ class MyResource {
     /**
      * 商品
      */
-    private AtomicInteger goods = new AtomicInteger();
-
-
+    private final AtomicInteger goods = new AtomicInteger();
     BlockingQueue<String> blockingQueue = null;
+
     /**
      * 构造函数
      */
-
-    public MyResource(BlockingQueue<String> blockingQueue) {
+    public Shop(BlockingQueue<String> blockingQueue) {
         this.blockingQueue = blockingQueue;
         System.out.println(blockingQueue.getClass().getName());
     }
-    public void myProduct() throws Exception{
+
+    public void produce() throws Exception{
         String data = null;
         boolean retValue;
         while (flag){
-            data = goods.incrementAndGet()+"";
+            data = "面包"+ goods.incrementAndGet();
             retValue = blockingQueue.offer(data, 2L, TimeUnit.SECONDS);
             if (retValue){
-                System.out.println(Thread.currentThread().getName()+"插入"+data+"成功");
+                System.out.println(Thread.currentThread().getName()+"生产"+data+"成功");
             }else {
-                System.out.println(Thread.currentThread().getName()+"插入"+data+"失败");
+                System.out.println(Thread.currentThread().getName()+"未生产"+data);
             }
             TimeUnit.SECONDS.sleep(1);
         }
-        System.out.println(Thread.currentThread().getName()+"老板叫停，别生产了");
+        System.out.println(Thread.currentThread().getName()+"老板叫停，停止生产");
     }
 
-    public void myConsumer() throws Exception{
+    public void consume() throws Exception{
         String  result = null;
         while (flag){
             result = blockingQueue.poll(2L,TimeUnit.SECONDS);
             if (result == null || result.equalsIgnoreCase("")){
                 flag = false;
-                System.out.println(Thread.currentThread().getName()+"超时未取到，消费也退出");
-                System.out.println();
+                System.out.println(Thread.currentThread().getName()+"超时未买到，消费退出");
                 System.out.println();
                 return;
             }
+            TimeUnit.SECONDS.sleep(0);
             System.out.println(Thread.currentThread().getName()+"消费"+result+"成功");
-
         }
     }
 
     public void stop()throws Exception{
+        System.out.println();
+        System.out.println("时间到，main叫停，关店");
         this.flag = false;
     }
 
@@ -72,25 +72,28 @@ class MyResource {
 
 public class ProdConsumerBlockQueueDemo {
     public static void main(String[] args) throws Exception {
-        MyResource myResource = new MyResource(new ArrayBlockingQueue<>(10));
+        Shop shop = new Shop(new ArrayBlockingQueue<>(1));
         new Thread(() ->{
             System.out.println(Thread.currentThread().getName()+"生产线程启动");
             try {
-                myResource.myProduct();
+                shop.produce();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        },"Product").start();
+        },"Producer").start();
 
 
         new Thread(() ->{
             System.out.println(Thread.currentThread().getName()+"消费线程启动");
             try {
-                myResource.myConsumer();
+                shop.consume();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         },"Consumer").start();
+
+
+
 
         try {
             TimeUnit.SECONDS.sleep(5);
@@ -98,11 +101,7 @@ public class ProdConsumerBlockQueueDemo {
             e.printStackTrace();
         }
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("时间到，老板叫main停止，活动结束");
-        myResource.stop();
+        shop.stop();
     }
 
 }

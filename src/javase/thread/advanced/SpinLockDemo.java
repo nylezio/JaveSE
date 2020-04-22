@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @description: 自旋锁
  * 手写一个自旋锁
  * 好处：循环比较直到成功，没有wait的阻塞

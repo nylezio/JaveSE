@@ -42,6 +42,8 @@ public enum CountryEnum {
 
     @Override
     public String toString() {
-        return "RetCode:"+ getRetCode()+ ",RetMessage:"+getRetMessage() ;
+        return
+                "retCode=" + retCode +
+                ", retMessage='" + retMessage + '\'';
     }
 }

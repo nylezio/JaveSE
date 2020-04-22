@@ -4,6 +4,13 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+
+/**
+ * @author: CodeJerry
+ * @description:
+ * 可重入锁
+ * @date: 2020/03/26 15:05
+ */
 class Phone implements Runnable{
     public synchronized void sendSMS() throws Exception{
         System.out.println(Thread.currentThread().getName()+" sendSMS()");
@@ -13,6 +20,8 @@ class Phone implements Runnable{
         System.out.println(Thread.currentThread().getName()+" sendEmail()");
     }
     Lock lock = new ReentrantLock();
+
+
     @Override
     public void run() {
         get();
@@ -42,12 +51,7 @@ class Phone implements Runnable{
     ////////////////////
 }
 
-/**
- * @author: CHNjerry
- * @description:
- * 可重入锁
- * @date: 2020/03/26 15:05
- */
+
 
 public class ReentrantLockDemo {
     public static void main(String[] args) throws Exception{

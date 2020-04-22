@@ -3,7 +3,7 @@ package javase.thread.advanced;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @description:
  * CAS是什么？
  *  比较并交换===>compareAndSet
