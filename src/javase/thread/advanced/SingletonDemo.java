@@ -22,7 +22,7 @@ public class SingletonDemo {
      */
     public static SingletonDemo getInstance(){
         //先判断对象是否已经实例过，没有实例化过才进⼊加锁代码
-        //若不加volatile，仍会出现重排，其他线程已经示例化，但是尚未return
+        //若不加volatile，仍会出现重排，其他线程已经实例化，但是尚未return
         if (instance == null){
             //类对象加锁
             synchronized (SingletonDemo.class){

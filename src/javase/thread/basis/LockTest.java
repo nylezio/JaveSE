@@ -3,9 +3,10 @@ package javase.thread.basis;
 import java.util.concurrent.locks.ReentrantLock;
 
 class Window1 implements Runnable {
+
     private int ticket = 100;
 
-    private ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
 
     @Override
     public void run() {

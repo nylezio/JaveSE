@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 class Num{
     int number=10;
-    void addnumer(){
+    void addNumber(){
         this.number+=100;
     }
 }
@@ -27,7 +27,7 @@ public class visibility {
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
-            num.addnumer();
+            num.addNumber();
             System.out.println(Thread.currentThread().getName()+"修改值为"+num.number);
         },"AAA").start();
 

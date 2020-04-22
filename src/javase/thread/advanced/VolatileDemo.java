@@ -13,6 +13,8 @@ class myData {
     public void addPlusPlus(){
         number++;
     }
+
+
     AtomicInteger atomicInteger = new AtomicInteger();
     public void addMyAtomic(){
         //构造默认初始值0

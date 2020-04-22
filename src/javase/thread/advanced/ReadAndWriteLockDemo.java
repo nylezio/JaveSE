@@ -5,6 +5,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * @author: CodeJerry
+ * @description: 读写锁
+ *      满足并发量，读读能共存，写不能与读写共存
+ *      写操作：原子+独占,整个过程必须是完整的统一体，不许被打断
+ *      写操作被严格控制，没有加塞，既保证一致性，又保证并发性，读写分离。
+ * @date: 2020/03/26 16:13
+ */
 class MyCache{
     /**
      * 资源类 机场大屏幕
@@ -58,14 +66,7 @@ class MyCache{
 
 }
 
-/**
- * @author: CHNjerry
- * @description: 读写锁
- *      满足并发量，读读能共存，写不能与读写共存
- *      写操作：原子+独占,整个过程必须是完整的统一体，不许被打断
- *      写操作被严格控制，没有加塞，既保证一致性，又保证并发性，读写分离。
- * @date: 2020/03/26 16:13
- */
+
 public class ReadAndWriteLockDemo {
     public static void main(String[] args) {
         MyCache myCache = new MyCache();
