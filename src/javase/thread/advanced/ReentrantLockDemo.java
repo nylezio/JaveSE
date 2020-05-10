@@ -12,15 +12,15 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date: 2020/03/26 15:05
  */
 class Phone implements Runnable{
-    public synchronized void sendSMS() throws Exception{
+    public synchronized void sendSMS() {
         System.out.println(Thread.currentThread().getName()+" sendSMS()");
         sendEmail();
     }
-    public synchronized void sendEmail() throws Exception{
+    public synchronized void sendEmail() {
         System.out.println(Thread.currentThread().getName()+" sendEmail()");
     }
-    Lock lock = new ReentrantLock();
 
+    Lock lock = new ReentrantLock();
 
     @Override
     public void run() {
@@ -40,17 +40,16 @@ class Phone implements Runnable{
             lock.unlock();
         }
     }
-    public void set(){
+
+    public void set() {
         lock.lock();
         try {
-            System.out.println(Thread.currentThread().getName()+" set()");
-        }finally {
+            System.out.println(Thread.currentThread().getName() + " set()");
+        } finally {
             lock.unlock();
         }
     }
-    ////////////////////
 }
-
 
 
 public class ReentrantLockDemo {

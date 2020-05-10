@@ -93,3 +93,5 @@ N
 src/javase/jdbcs/JdbcUtil.java,e\1\e17ced3f1fae541851f6f6e909bf908b58891a0b
 T
 $src/javase/jdbcs/DataSourceTest.java,d\3\d3a7ce791662f996a89743ea6206794322ae66fd
+S
+#src/javase/collections/MapTest.java,6\0\60a7ef77eea6ae02a9c00cb216ac1b359abb93f1

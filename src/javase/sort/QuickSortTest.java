@@ -17,30 +17,30 @@ public class QuickSortTest {
     }
 
     private static void quickSort(int[] arrs){
-        SubSort(arrs, 0, arrs.length - 1);
+        subSort(arrs, 0, arrs.length - 1);
     }
 
-    private static void SubSort(int[] arrs, int left, int right){
+    private static void subSort(int[] arrs, int left, int right){
         if (left < right){
             int base = arrs[left];
-            int low = left;
-            int high = right + 1;
+            int i = left;
+            int j = right;
             while (true){
-                while (low < right && arrs[++low] <= base ){
-                    ;
+                while (i < right && arrs[i] <= base ){
+                    i++;
                 }
-                while (high > left && arrs[--high] >= base){
-                    ;
+                while (j > left && arrs[j] >= base){
+                    j--;
                 }
-                if (low < high){
-                    swap(arrs, low , high);
+                if (i < j){
+                    swap(arrs, i , j);
                 } else {
                     break;
                 }
             }
-            swap(arrs, left, high);
-            SubSort(arrs, left,high - 1);
-            SubSort(arrs, high + 1, right);
+            swap(arrs, left, j);
+            subSort(arrs, left,j - 1);
+            subSort(arrs, j + 1, right);
         }
     }
 
