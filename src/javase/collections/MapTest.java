@@ -35,8 +35,8 @@ public class MapTest {
         map.put("hhh",4);
 
         System.out.println(map);
-        boolean b = map.containsKey(2);
-        if (b){
+
+        if (map.containsKey(2)){
             System.out.println(map.get(2));
         }
 

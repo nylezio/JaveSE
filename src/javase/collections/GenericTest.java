@@ -40,11 +40,11 @@ public class GenericTest {
 
 
         Integer[] arr = new Integer[]{1,2,3,4};
-        List<Integer> copy = subStudent.copy(arr);
+        List<Integer> copy = SubStudent.copy(arr);
         System.out.println(copy);
 
         Double[] arr1 = new Double[]{1.1,2.3,3.4};
-        List<Double> copy1 = subStudent.copy(arr1);
+        List<Double> copy1 = SubStudent.copy(arr1);
         System.out.println(copy1);
     }
 }

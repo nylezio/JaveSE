@@ -1,5 +1,5 @@
 
 ^
-java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(»γίΊψÿÿÿÿ
-^
 java:S2276 "CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(»γίΊψÿÿÿÿ
+^
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(»γίΊψÿÿÿÿ

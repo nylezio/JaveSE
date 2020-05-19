@@ -3,7 +3,7 @@ package javase.others;
 import java.util.Date;
 
 /**
- * @author: CHNjerry
+ * @author: CodeJerry
  * @date: 2020/03/25 15:32
  * 这是⼀个简单的Runnable类，需要⼤约5秒钟来执⾏其任务。
  */

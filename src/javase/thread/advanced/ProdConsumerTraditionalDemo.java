@@ -19,42 +19,42 @@ class Market {//资源类
     private final Condition condition = lock.newCondition();
     public void increment()throws Exception{
         lock.lock();
-                try{
-                    //多线程中必须用while不能用if
-                    while (flag != 0){
-                        //等待，不能生产
-                        condition.await();
-                    }
-                    //干活
-                    flag++;
-                    System.out.println(Thread.currentThread().getName()+""+ flag);
-                    //通知唤醒
-                    condition.signalAll();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        try{
+            //多线程中必须用while不能用if
+            while (flag != 0){
+                //等待，不能生产
+                condition.await();
+            }
+            //干活
+            flag++;
+            System.out.println(Thread.currentThread().getName()+""+ flag);
+            //通知唤醒
+            condition.signalAll();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
         //1 判断
 
     }
     public void decrement()throws Exception{
         lock.lock();
-                try{
-                    while (flag == 0){
-                        //等待，不能消费
-                        condition.await();
-                    }
-                    //干活
-                    flag--;
-                    System.out.println(Thread.currentThread().getName()+""+ flag);
-                    //通知唤醒
-                    condition.signalAll();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        try{
+            while (flag == 0){
+                //等待，不能消费
+                condition.await();
+            }
+            //干活
+            flag--;
+            System.out.println(Thread.currentThread().getName()+""+ flag);
+            //通知唤醒
+            condition.signalAll();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
         //1 判断
 
     }

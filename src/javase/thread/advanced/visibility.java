@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 class Num{
+//    volatile int number=10;
     int number=10;
     void addNumber(){
         this.number+=100;

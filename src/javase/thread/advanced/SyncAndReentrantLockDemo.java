@@ -23,65 +23,65 @@ class ShareResource{
 
     public void print5(){
         lock.lock();
-                try{
-                    //判断
-                    while (number != 1){
-                        condition1.await();
-                    }
-                    //干活
-                    for (int i = 0; i < 5; i++) {
-                        System.out.println(Thread.currentThread().getName()+""+i);
-                    }
-                    //通知
-                    number = 2;
-                    condition2.signal();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        try{
+            //判断
+            while (number != 1){
+                condition1.await();
+            }
+            //干活
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread().getName()+""+i);
+            }
+            //通知
+            number = 2;
+            condition2.signal();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
 
     }
     public void print10(){
         lock.lock();
-                try{
-                    //判断
-                    while (number != 2){
-                        condition2.await();
-                    }
-                    //干活
-                    for (int i = 0; i < 10; i++) {
-                        System.out.println(Thread.currentThread().getName()+""+i);
-                    }
-                    //通知
-                    number = 3;
-                    condition3.signal();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        try{
+            //判断
+            while (number != 2){
+                condition2.await();
+            }
+            //干活
+            for (int i = 0; i < 10; i++) {
+                System.out.println(Thread.currentThread().getName()+""+i);
+            }
+            //通知
+            number = 3;
+            condition3.signal();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
 
     }
     public void print15(){
         lock.lock();
-                try{
-                    //判断
-                    while (number != 3){
-                        condition3.await();
-                    }
-                    //干活
-                        for (int i = 0; i < 15; i++) {
-                            System.out.println(Thread.currentThread().getName()+""+i);
-                        }
-                    //通知
-                        number = 1;
-                        condition1.signal();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        try{
+            //判断
+            while (number != 3){
+                condition3.await();
+            }
+            //干活
+            for (int i = 0; i < 15; i++) {
+                System.out.println(Thread.currentThread().getName()+""+i);
+            }
+            //通知
+            number = 1;
+            condition1.signal();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
 
     }
 
@@ -93,20 +93,20 @@ public class SyncAndReentrantLockDemo {
         new Thread(() ->{
             for (int i = 0; i < 10; i++) {
                 shareResource.print5();
-            } 
-                },"AA").start();
+            }
+        },"AA").start();
 
         new Thread(() ->{
             for (int i = 0; i < 10; i++) {
                 shareResource.print10();
             }
-                },"BB").start();
+        },"BB").start();
 
         new Thread(() ->{
             for (int i = 0; i < 10; i++) {
                 shareResource.print15();
             }
-                },"CC").start();
+        },"CC").start();
     }
 }
 

@@ -21,7 +21,7 @@ class Shop {
      * 商品
      */
     private final AtomicInteger goods = new AtomicInteger();
-    BlockingQueue<String> blockingQueue = null;
+    private BlockingQueue<String> blockingQueue = null;
 
     /**
      * 构造函数

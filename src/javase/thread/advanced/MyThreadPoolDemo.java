@@ -56,7 +56,7 @@ public class MyThreadPoolDemo {
     /**
      * 但是生产中不用Executors创建线程池，需要规避资源耗尽的风险,因为无法设定Blocking的长度。
      */
-    @Test
+
     private static void threadPoolInit() {
         ExecutorService threadPool1 = Executors.newFixedThreadPool(5);//一池5个处理线程
         ExecutorService threadPool2 = Executors.newSingleThreadExecutor();//一池1个处理线程

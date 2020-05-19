@@ -13,23 +13,23 @@ import java.util.concurrent.TimeUnit;
  * 循环等待条件
  * @date: 2020/03/28 20:00
  */
-class HoldLockThread implements Runnable{
-    private String a;
-    private String b;
+class DeadLockThread implements Runnable{
+    private final String A;
+    private final String B;
 
-    HoldLockThread(String a, String b) {
-        this.a = a;
-        this.b = b;
+    DeadLockThread(String a, String b) {
+        this.A = a;
+        this.B = b;
     }
 
     @Override
     public void run() {
-     synchronized (a){
-         System.out.println(Thread.currentThread().getName()+"持有"+ a +"尝试获得"+ b);
+     synchronized (A){
+         System.out.println(Thread.currentThread().getName()+"持有"+ A +"尝试获得"+ B);
          try {
              TimeUnit.SECONDS.sleep(2);
-             synchronized (b){
-                 System.out.println(Thread.currentThread().getName()+"持有"+ b +"尝试获得"+ a);
+             synchronized (B){
+                 System.out.println(Thread.currentThread().getName()+"持有"+ B +"尝试获得"+ A);
              }
              }catch (InterruptedException e){
                  e.printStackTrace();
@@ -38,6 +38,9 @@ class HoldLockThread implements Runnable{
     }
 }
 
+/**
+ * @author Code
+ */
 public class DeadLockDemo {
     public static void main(String[] args) {
         /*
@@ -51,7 +54,7 @@ public class DeadLockDemo {
          * 线程BBB获得了lockB，马上要用lockA
          * 但是都被占用了
          */
-        new Thread(new HoldLockThread(lockA,lockB),"AAA").start();
-        new Thread(new HoldLockThread(lockB,lockA),"BBB").start();
+        new Thread(new DeadLockThread(lockA,lockB),"AAA").start();
+        new Thread(new DeadLockThread(lockB,lockA),"BBB").start();
     }
 }

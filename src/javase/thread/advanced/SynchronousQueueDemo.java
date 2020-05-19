@@ -33,13 +33,13 @@ public class SynchronousQueueDemo {
         new Thread(() ->{
             try {
                 TimeUnit.SECONDS.sleep(1);
-                System.out.println(Thread.currentThread().getName()+""+blockingQueue.take());
+                System.out.println(Thread.currentThread().getName()+"take"+blockingQueue.take());
 
                 TimeUnit.SECONDS.sleep(2);
-                System.out.println(Thread.currentThread().getName()+""+blockingQueue.take());
+                System.out.println(Thread.currentThread().getName()+"take"+blockingQueue.take());
 
                 TimeUnit.SECONDS.sleep(3);
-                System.out.println(Thread.currentThread().getName()+""+blockingQueue.take());
+                System.out.println(Thread.currentThread().getName()+"take"+blockingQueue.take());
 
             } catch (InterruptedException e) {
                 e.printStackTrace();

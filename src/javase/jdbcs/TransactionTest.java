@@ -53,7 +53,7 @@ public class TransactionTest {
             }
             e.printStackTrace();
         }finally {
-            JdbcUtil.release(connection,preparedStatement,resultSet);
+            JdbcUtil.release(connection,preparedStatement, resultSet);
         }
 
     }

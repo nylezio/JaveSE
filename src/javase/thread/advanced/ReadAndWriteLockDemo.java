@@ -22,47 +22,47 @@ class MyCache{
     private ReentrantReadWriteLock rwlock = new ReentrantReadWriteLock();
     public void put(String key, Object value){
         rwlock.writeLock().lock();
-                try{
-                    System.out.println(Thread.currentThread().getName()+"开始写入"+key);
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    }catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
-                    map.put(key,value);
-                    System.out.println(Thread.currentThread().getName()+"写入完成");
+        try{
+            System.out.println(Thread.currentThread().getName()+"开始写入"+key);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            map.put(key,value);
+            System.out.println(Thread.currentThread().getName()+"写入完成");
 
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    rwlock.writeLock().unlock();
-                }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            rwlock.writeLock().unlock();
         }
-        public void get(String key){
-            rwlock.readLock().lock();
-                try{
-                    System.out.println(Thread.currentThread().getName()+"开始读取");
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    }catch (InterruptedException e){
-                        e.printStackTrace();
-                    }
-                    Object result = map.get(key);
-                    System.out.println(Thread.currentThread().getName()+"读取完成:"+result);
+    }
+    public void get(String key){
+        rwlock.readLock().lock();
+        try{
+            System.out.println(Thread.currentThread().getName()+"开始读取");
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            Object result = map.get(key);
+            System.out.println(Thread.currentThread().getName()+"读取完成:"+result);
 
-                }catch (Exception e){
-                    e.printStackTrace();
-                }finally {
-                    rwlock.readLock().unlock();
-                }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            rwlock.readLock().unlock();
         }
+    }
 
     /**
      *  清楚缓存
      */
     public void clearMap(){
         map.clear();
-        }
+    }
 
 }
 

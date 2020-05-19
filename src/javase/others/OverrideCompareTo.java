@@ -14,7 +14,6 @@ public class OverrideCompareTo {
         private int age;
 
         public Person(String name, int age){
-            super();
             this.name = name;
             this.age =age;
         }
@@ -42,16 +41,33 @@ public class OverrideCompareTo {
             } else if (this.age < o.getAge()){
                 return -1;
             }
-            return age;
+            return 0;
         }
 
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            Person person = (Person) o;
+
+            if (age != person.age) return false;
+            return name != null ? name.equals(person.name) : person.name == null;
+        }
+
+        @Override
+        public int hashCode() {
+            int result = name != null ? name.hashCode() : 0;
+            result = 31 * result + age;
+            return result;
+        }
     }
     public static void main(String[] args) {
-        TreeMap<Person, String> pdata = new TreeMap<Person, String>();
+        TreeMap<Person, String> pdata = new TreeMap<>();
         pdata.put(new Person("张三", 30), "zhangsan");
         pdata.put(new Person("李四", 20), "lisi");
         pdata.put(new Person("王五", 10), "wangwu");
-        pdata.put(new Person("⼩红", 5), "xiaohong");
+        pdata.put(new Person("张三", 30), "xiaohong");
 // 得到key的值的同时得到key所对应的值
         Set<Person> keys = pdata.keySet();
         for (Person key : keys) {

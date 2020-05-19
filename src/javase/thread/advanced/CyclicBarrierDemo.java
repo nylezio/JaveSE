@@ -22,7 +22,7 @@ public class CyclicBarrierDemo {
                 } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
-            }, String.valueOf(i)).start();
+            }, "悟空"+ String.valueOf(i)).start();
         }
     }
 

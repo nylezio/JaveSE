@@ -11,8 +11,8 @@ import java.util.concurrent.atomic.AtomicStampedReference;
  * @date: 2020/03/26 13:04
  */
 public class ABADemo {
-    static AtomicReference<Integer> atomicReference = new AtomicReference<>(100);
-    static AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100,1);
+    public static AtomicReference<Integer> atomicReference = new AtomicReference<>(100);
+    public static AtomicStampedReference<Integer> atomicStampedReference = new AtomicStampedReference<>(100,1);
 
     public static void main(String[] args) {
         System.out.println("以下是ABA问题的产生");
@@ -32,11 +32,17 @@ public class ABADemo {
             System.out.println(atomicReference.compareAndSet(100, 2019)+"\t"+atomicReference.get());
         },"t2").start();
 
+
+
+
+
         try {
             TimeUnit.SECONDS.sleep(2);
         }catch (InterruptedException e){
             e.printStackTrace();
         }
+
+
         System.out.println("以下是ABA问题的解决");
         new Thread(()->{
             int stamp = atomicStampedReference.getStamp();

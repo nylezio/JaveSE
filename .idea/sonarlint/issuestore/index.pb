@@ -127,3 +127,5 @@ Y
 -src/javase/others/ThreadPoolExecutorDemo.java,2\e\2efb0af54ec90fb670304816d7d82c122092f36e
 W
 'src/javase/thread/advanced/ABADemo.java,8\6\865820f0411c5b5caba9d04e68e8b17d83ec0afb
+V
+&src/javase/classes/SingletonTest3.java,d\d\dd151a0fa9766719f87086f07846d646841e967f

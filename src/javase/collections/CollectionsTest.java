@@ -10,8 +10,8 @@ import java.util.*;
  */
 public class CollectionsTest {
     public static void main(String[] args) {
-        Collection<Object> collection = new ArrayList<>();
-        Collection<Integer> collection1 = new ArrayList<>();
+        List<Object> collection = new ArrayList<>();
+        List<Integer> collection1 = new ArrayList<>();
         collection1.add(123);
         collection.add(456);
         collection.add(123);
