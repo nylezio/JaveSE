@@ -16,6 +16,7 @@ class Window1 implements Runnable {
 
                 if (ticket > 0) {
                     Thread.sleep(100);
+                    System.out.println(Thread.currentThread().getName());
                     System.out.println(ticket);
                     ticket--;
                 } else {
@@ -23,7 +24,9 @@ class Window1 implements Runnable {
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            } finally { lock.unlock(); }
+            } finally {
+                lock.unlock();
+            }
 
         }
     }

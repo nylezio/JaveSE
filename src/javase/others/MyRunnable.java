@@ -20,11 +20,12 @@ public class MyRunnable implements Runnable{
         processCommand();
         System.out.println(Thread.currentThread().getName() + " End. Time = "
                 + new Date());
+        System.out.println("执行命令"+ command);
     }
 
     private void processCommand(){
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e){
             e.printStackTrace();
         }
@@ -33,5 +34,10 @@ public class MyRunnable implements Runnable{
     @Override
     public String toString() {
         return this.command;
+    }
+
+    public static void main(String[] args) {
+        new Thread(new MyRunnable("HH")).start();
+
     }
 }

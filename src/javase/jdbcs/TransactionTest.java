@@ -46,6 +46,7 @@ public class TransactionTest {
 
         }catch (SQLException e){
             try {
+                assert connection != null;
                 connection.rollback();
             }catch (Exception e1){
                 e.printStackTrace();

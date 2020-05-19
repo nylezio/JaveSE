@@ -1,5 +1,6 @@
 package javase.classes;
 
+
 /**
  * @author: codeJerry
  * @description: 单例模式的懒汉式实现
@@ -23,7 +24,7 @@ class Order{
     /**
      * 2.声明类对象，没有初始化
      */
-    private static Order instance = null;
+    private volatile static Order instance = null;
 
     /**
      *
@@ -31,7 +32,11 @@ class Order{
      */
     public static Order getInstance(){
         if (instance == null){
-            instance = new Order();
+            synchronized (Order.class){
+                if (instance == null){
+                    instance = new Order();
+                }
+            }
         }
         return instance;
     }

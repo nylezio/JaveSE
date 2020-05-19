@@ -6,7 +6,7 @@ package javase.classes.override;
  * @date: 2020/04/01 13:47
  */
 public class Student extends Person {
-    private String major;
+    private final String major;
 
     public Student(String major) {
         this.major = major;

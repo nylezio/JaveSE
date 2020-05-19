@@ -13,16 +13,19 @@ import java.util.TreeSet;
 public class TreeSetTest {
 
     @Test
-    public void test1(){
+    public void test1() {
         //按照年龄从小到大排列
         Comparator<User> com = (u1, u2) -> {
-                return Integer.compare(u1.getAge(), u2.getAge());
+            if (u1.getName().equals(u2.getName())) {
+                return 0;
+            }
+            return -1;
         };
 
 
 
         //有comparator定制排序覆盖了类中的comparable
-        TreeSet<User> treeSet = new TreeSet<>(com);
+        TreeSet<User> treeSet = new TreeSet<>();
 //        treeSet.add(123);
 //        treeSet.add(9);
 //        treeSet.add(7);
@@ -32,8 +35,8 @@ public class TreeSetTest {
 
         treeSet.add(new User("Tom",5));
         treeSet.add(new User("Jerry",7));
-        treeSet.add(new User("Jack",15));
         treeSet.add(new User("Jack",7));
+        treeSet.add(new User("Jack",15));
 
         for (Object user: treeSet
              ) {

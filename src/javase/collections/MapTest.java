@@ -3,6 +3,7 @@ package javase.collections;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author: codeJerry
@@ -22,6 +23,8 @@ import java.util.*;
  * @date: 2020/04/09 15:40
  */
 public class MapTest {
+
+
     @Test
     public void test(){
         Map<Object,Object> map = new HashMap<>();
@@ -42,7 +45,11 @@ public class MapTest {
         System.out.println(set);
 
         Collection<Object> values = map.values();
-        System.out.println(values);
+        System.out.println("values" + values);
+
+
+        map.remove("hhh");
+        System.out.println(map.containsKey("hhh"));
 
         Set<Map.Entry<Object,Object>> entrySet = map.entrySet();
         System.out.println(entrySet);
@@ -61,6 +68,8 @@ public class MapTest {
         //线程安全的
         Map<Object, Object> map1 = Collections.synchronizedMap(map);
         System.out.println(map1);
+        ConcurrentHashMap<String, Object> map2 = new ConcurrentHashMap<>(3);
+        
     }
 
     @Test

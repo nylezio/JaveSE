@@ -16,7 +16,7 @@ public class CollectionsTest {
         collection.add(456);
         collection.add(123);
         collection.add("abc");
-        collection.add(new String("Tom"));
+        collection.add("Tom");
         System.out.println(collection);
         System.out.println(collection.hashCode());
         System.out.println(collection.containsAll(collection1));

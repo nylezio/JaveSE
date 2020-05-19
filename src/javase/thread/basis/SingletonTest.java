@@ -9,7 +9,7 @@ package javase.thread.basis;
 class Single {
     private Single(){}
 
-    private static volatile Single instance = null;
+    private volatile static Single instance = null;
 
     public static Single getInstance() {
         //通过唯一的对象:Bank这个类
