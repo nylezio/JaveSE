@@ -129,3 +129,13 @@ W
 'src/javase/thread/advanced/ABADemo.java,8\6\865820f0411c5b5caba9d04e68e8b17d83ec0afb
 V
 &src/javase/classes/SingletonTest3.java,d\d\dd151a0fa9766719f87086f07846d646841e967f
+V
+&src/javase/collections/StringTest.java,1\4\14bca548b43d3f951a735510c2273387045ac880
+L
+src/javase/file/NioTest.java,0\2\02bdac53ad2657173fc1e7ec8118c352e3e0d2e4
+U
+%src/javase/threadtest/SubmitTest.java,e\b\eb5d02654b8bfcf556ec23fe186463fdd9a19251
+R
+"src/javase/file/NioServerTest.java,1\5\15f395e3fa9235d2e99a10ca7699da6bed8522ce
+R
+"src/javase/file/NcoClientTest.java,e\7\e7cb092d82b87cedae7c0e39e0130d895000c87f

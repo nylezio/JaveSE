@@ -1,4 +1,4 @@
-package javase.threadTest;
+package javase.threadtest;
 
 /**
  * @author: codeJerry

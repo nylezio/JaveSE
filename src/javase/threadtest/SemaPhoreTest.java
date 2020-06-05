@@ -1,4 +1,4 @@
-package javase.threadTest;
+package javase.threadtest;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;

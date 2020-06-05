@@ -26,6 +26,7 @@ package javase.classes;
  * @date: 2020/04/02 14:33
  */
 public class InterfaceTest {
+
     public static void main(String[] args) {
         Ship ship = new Ship();
 
@@ -81,7 +82,6 @@ interface Flyable{
      */
     public static final int MAX_SPEED = 7900;
     int MIN_SPEED = 0;
-
     /**
      * 加速
      */

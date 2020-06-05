@@ -1,4 +1,4 @@
-package javase.threadTest;
+package javase.threadtest;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
