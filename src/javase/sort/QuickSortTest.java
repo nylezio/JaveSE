@@ -1,5 +1,7 @@
 package javase.sort;
 
+import java.util.Arrays;
+
 /**
  * @author: codeJerry
  * @description: 快速排序
@@ -10,10 +12,7 @@ public class QuickSortTest {
     public static void main(String[] args) {
         int[] arrs = new int[]{43,32,76,98,0,64,33,37,53,111};
         quickSort(arrs);
-        for (int arr:arrs
-        ) {
-            System.out.println(arr);
-        }
+        System.out.println(Arrays.toString(arrs));
     }
 
     private static void quickSort(int[] arrs){
