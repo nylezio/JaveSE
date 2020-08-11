@@ -33,9 +33,6 @@ public class ABADemo {
         },"t2").start();
 
 
-
-
-
         try {
             TimeUnit.SECONDS.sleep(2);
         }catch (InterruptedException e){

@@ -14,7 +14,6 @@ import java.util.List;
  */
 public class ArrayListTest {
 
-
     @Test
     public void test1 (){
         ArrayList<Object> arrayList = new ArrayList<>();
@@ -28,10 +27,7 @@ public class ArrayListTest {
         List<Integer> list = Arrays.asList(1,2,3);
         arrayList.addAll(list);
         System.out.println(arrayList.size());
-
     }
-
-
 
     @Test
     public void test2 (){

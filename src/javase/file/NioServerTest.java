@@ -15,13 +15,16 @@ import java.util.concurrent.LinkedBlockingQueue;
  * @date: 2020/06/02 00:51
  */
 public class NioServerTest {
+
     private static Selector selector;
     private static LinkedBlockingQueue<SelectionKey> requestQueue;
     private static ExecutorService threadPool;
+
     public static void main(String[] args) {
         init();
         listen();
     }
+
     private static void init(){
         ServerSocketChannel serverSocketChannel = null;
         try {

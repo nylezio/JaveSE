@@ -13,9 +13,7 @@ public class BubbleSortTest {
         for (int i = 0; i < arrs.length - 1; i++) {
             for (int j = 0; j < arrs.length - 1 - i; j++) {
                 if (arrs[j] > arrs[j+1]){
-                    int temp = arrs[j];
-                    arrs[j] = arrs[j+1];
-                    arrs[j+1]= temp;
+                    swap(arrs, j, j + 1);
                 }
             }
         }
@@ -23,6 +21,11 @@ public class BubbleSortTest {
              ) {
             System.out.println(arr);
         }
+    }
+    private static void swap(int[] arrs, int low, int high) {
+        int temp = arrs[low];
+        arrs[low] = arrs[high];
+        arrs[high] = temp;
     }
 
 }

@@ -16,10 +16,10 @@ public class QuickSortTest {
     }
 
     private static void quickSort(int[] arrs){
-        subSort(arrs, 0, arrs.length - 1);
+        quickSort(arrs, 0, arrs.length - 1);
     }
 
-    private static void subSort(int[] arrs, int left, int right) {
+    private static void quickSort(int[] arrs, int left, int right) {
         if (left >= right) {return;}
         int base = arrs[left];
         int i = left;
@@ -37,8 +37,8 @@ public class QuickSortTest {
             swap(arrs, i, j);
         }
         swap(arrs, left, j);
-        subSort(arrs, left, j - 1);
-        subSort(arrs, j + 1, right);
+        quickSort(arrs, left, j - 1);
+        quickSort(arrs, j + 1, right);
     }
 
     private static void swap(int[] arrs, int low, int high) {

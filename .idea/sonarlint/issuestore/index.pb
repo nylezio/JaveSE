@@ -139,3 +139,5 @@ R
 "src/javase/file/NioServerTest.java,1\5\15f395e3fa9235d2e99a10ca7699da6bed8522ce
 R
 "src/javase/file/NcoClientTest.java,e\7\e7cb092d82b87cedae7c0e39e0130d895000c87f
+Y
+)src/javase/file/FileReaderWriterTest.java,1\8\188c4615524f042bf56b11f2fdf772bce3e708f4
