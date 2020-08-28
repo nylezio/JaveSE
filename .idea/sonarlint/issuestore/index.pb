@@ -141,3 +141,11 @@ R
 "src/javase/file/NcoClientTest.java,e\7\e7cb092d82b87cedae7c0e39e0130d895000c87f
 Y
 )src/javase/file/FileReaderWriterTest.java,1\8\188c4615524f042bf56b11f2fdf772bce3e708f4
+Z
+*src/javase/file/InputOutputStreamTest.java,d\2\d2e7ac85a6ae3fe5524733d3b31e705c5ada4c5a
+K
+src/javase/bio/Message.java,e\5\e546ed928effb2818a5f10a1e4e7ce1e08901b59
+O
+src/javase/bio/HelloServer.java,6\5\65b62132459a08c6068ed2eee6e04c5978ce7152
+O
+src/javase/bio/HelloClient.java,2\f\2facba7213f3c63804288f6bad1d89929679c595
