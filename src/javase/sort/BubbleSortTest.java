@@ -1,5 +1,7 @@
 package javase.sort;
 
+import java.util.Arrays;
+
 /**
  * @author: codeJerry
  * @description: 冒泡排序
@@ -17,10 +19,7 @@ public class BubbleSortTest {
                 }
             }
         }
-        for (int arr: arrs
-             ) {
-            System.out.println(arr);
-        }
+        System.out.println(Arrays.toString(arrs));
     }
     private static void swap(int[] arrs, int low, int high) {
         int temp = arrs[low];

@@ -27,7 +27,7 @@ public class MapTest {
 
     @Test
     public void test(){
-        Map<Object,Object> map = new HashMap<>();
+        Map<Object,Object> map = new HashMap<>(10);
         map.put(null,null);
         map.put(null,3);
         map.put(2,4);

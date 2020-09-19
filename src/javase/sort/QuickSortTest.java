@@ -19,16 +19,16 @@ public class QuickSortTest {
         quickSort(arrs, 0, arrs.length - 1);
     }
 
-    private static void quickSort(int[] arrs, int left, int right) {
-        if (left >= right) {return;}
-        int base = arrs[left];
-        int i = left;
-        int j = right;
+    private static void quickSort(int[] arrs, int l, int r) {
+        if (l >= r) {return;}
+        int base = arrs[l];
+        int i = l;
+        int j = r;
         while (true) {
-            while (i < right && arrs[i] <= base) {
+            while (i < r && arrs[i] <= base) {
                 i++;
             }
-            while (j > left && arrs[j] >= base) {
+            while (j > l && arrs[j] >= base) {
                 j--;
             }
             if (i >= j){
@@ -36,9 +36,9 @@ public class QuickSortTest {
             }
             swap(arrs, i, j);
         }
-        swap(arrs, left, j);
-        quickSort(arrs, left, j - 1);
-        quickSort(arrs, j + 1, right);
+        swap(arrs, l, j);
+        quickSort(arrs, l, j - 1);
+        quickSort(arrs, j + 1, r);
     }
 
     private static void swap(int[] arrs, int low, int high) {

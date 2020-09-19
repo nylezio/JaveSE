@@ -145,3 +145,9 @@ O
 src/javase/bio/HelloServer.java,6\5\65b62132459a08c6068ed2eee6e04c5978ce7152
 O
 src/javase/bio/HelloClient.java,2\f\2facba7213f3c63804288f6bad1d89929679c595
+:
+
+hello2.txt,c\9\c9ee995ffd32513f2b65f4fab85616d6aba6f26c
+:
+
+hello1.txt,9\e\9ee1993f9e4e840a9e917e286d70ba3579ae97ee
